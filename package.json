@@ -1,7 +1,7 @@
 {
   "name": "@helix/router",
   "version": "1.0.0",
-  "description": "Smart two-stage LLM router for OpenClaw - uses LOW model for complexity evaluation, then routes to PRO/MID/LOW",
+  "description": "OpenClaw smart router with two-stage complexity evaluation and PRO/MID/LOW model routing", 
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
