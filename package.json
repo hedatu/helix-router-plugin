@@ -1,0 +1,25 @@
+{
+  "name": "@helix/router",
+  "version": "1.0.0",
+  "description": "Smart two-stage LLM router for OpenClaw - uses LOW model for complexity evaluation, then routes to PRO/MID/LOW",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts --format esm --dts --watch"
+  },
+  "keywords": [
+    "openclaw",
+    "plugin",
+    "router",
+    "llm",
+    "smart-routing"
+  ],
+  "author": "Helix",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0"
+  }
+}

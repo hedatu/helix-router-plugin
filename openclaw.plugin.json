@@ -1,0 +1,72 @@
+{
+  "id": "helix-router",
+  "name": "Helix Router",
+  "description": "Smart two-stage LLM router - complexity evaluation + intelligent routing to PRO/MID/LOW",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "providers": {
+        "type": "object",
+        "description": "Provider configurations for PRO/MID/LOW tiers",
+        "properties": {
+          "pro": {
+            "type": "object",
+            "properties": {
+              "baseUrl": { "type": "string" },
+              "apiKey": { "type": "string" },
+              "model": { "type": "string" }
+            }
+          },
+          "mid": {
+            "type": "object",
+            "properties": {
+              "baseUrl": { "type": "string" },
+              "apiKey": { "type": "string" },
+              "model": { "type": "string" }
+            }
+          },
+          "low": {
+            "type": "object",
+            "properties": {
+              "baseUrl": { "type": "string" },
+              "apiKey": { "type": "string" },
+              "model": { "type": "string" }
+            }
+          }
+        }
+      },
+      "routing": {
+        "type": "object",
+        "description": "Routing threshold configuration",
+        "properties": {
+          "proThreshold": { "type": "number", "default": 75 },
+          "midThreshold": { "type": "number", "default": 35 },
+          "defaultRoute": { "type": "string", "default": "mid" }
+        }
+      },
+      "cache": {
+        "type": "object",
+        "description": "Complexity cache configuration",
+        "properties": {
+          "enabled": { "type": "boolean", "default": true },
+          "ttlMs": { "type": "number", "default": 3600000 }
+        }
+      }
+    }
+  },
+  "uiHints": {
+    "providers.pro.apiKey": {
+      "label": "PRO API Key",
+      "sensitive": true
+    },
+    "providers.mid.apiKey": {
+      "label": "MID API Key",
+      "sensitive": true
+    },
+    "providers.low.apiKey": {
+      "label": "LOW API Key",
+      "sensitive": true
+    }
+  }
+}
